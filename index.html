@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Temperature podaci</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!--košarica- ikona -->
+		<div id="kosarica-toggle">
+			🛒
+			<span id="kosarica-broj">0</span>
+		</div>
+
+		<h1>Podaci o temperaturama</h1>
+
+		<div id="filters">
+			<label
+				>Sezona:
+				<select id="filterSeason">
+					<option value="">Sve</option>
+					<option value="Spring">Proljeće</option>
+					<option value="Summer">Ljeto</option>
+					<option value="Autumn">Jesen</option>
+					<option value="Winter">Zima</option>
+				</select>
+			</label>
+
+			<label
+				>Lokacija:
+				<select id="filterLocation">
+					<option value="">Sve</option>
+					<option value="inland">Unutrašnjost</option>
+					<option value="coastal">Obala</option>
+					<option value="mountain">Planina</option>
+				</select>
+			</label>
+
+			<label
+				>Vrsta vremena:
+				<select id="filterWeather">
+					<option value="">Sve</option>
+					<option value="Sunny">Sunčano</option>
+					<option value="Cloudy">Oblačno</option>
+					<option value="Rainy">Kišno</option>
+					<option value="Snowy">Snježno</option>
+				</select>
+			</label>
+
+			<label
+				>Temperatura:
+				<input type="range" id="filterTemp" min="-70" max="70" value="70" />
+				<span id="tempValue">≤ 70°C</span>
+			</label>
+		</div>
+
+		<!-- TABLICA -->
+		<table id="temperatureTable">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Temperatura</th>
+					<th>Sezona</th>
+					<th>Lokacija</th>
+					<th>Vrsta vremena</th>
+					<th>Akcija</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- dinamički -->
+			</tbody>
+		</table>
+
+		<div id="kosarica-container">
+			<aside id="kosarica">
+				<h2>Moja košarica</h2>
+				<ul id="lista-kosarice"></ul>
+				<button id="potvrdi-kosaricu">Potvrdi posudbu</button>
+			</aside>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
