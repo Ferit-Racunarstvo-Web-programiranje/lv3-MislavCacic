@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.galerija {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 2rem;
+	max-width: 1400px;
+	margin: 0 auto;
+	justify-items: center;
+}
+
+.galerija_slika {
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	width: 100%;
+	max-width: 300px;
+	text-align: center;
+}
+
+.galerija_slika img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.3s ease;
+}
+
+.galerija_slika img:hover {
+	transform: scale(1.05);
+}
+
+figcaption {
+	padding: 0.5rem;
+	font-size: 1rem;
+	color: #333;
+}
+
+.lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.9);
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.lightbox img {
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 10px;
+	box-shadow: 0 0 15px white;
+}
+
+.lightbox:target {
+	display: flex;
+}
+
+.lightbox .close {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	font-size: 3rem;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+	.galerija {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 800px) {
+	.galerija {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 500px) {
+	.galerija {
+		grid-template-columns: 1fr;
+	}
+}
+
+nav {
+	background-color: #333;
+	padding: 1rem;
+}
+
+.nav-menu {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	background-color: #333;
+	padding: 0;
+}
+
+.nav-menu li {
+	position: relative;
+}
+
+.nav-menu a {
+	color: white;
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+	background-color: #444;
+	transform: scale(1.05);
+}

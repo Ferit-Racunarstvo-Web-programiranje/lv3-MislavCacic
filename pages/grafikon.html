@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Grafikon vremenskih podataka" />
+		<meta name="author" content="Mislav Čačić" />
+		<title>Grafikon</title>
+		<link rel="stylesheet" href="../styles/style_grafikon.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="nav-menu">
+					<li><a href="../index.html">Početna</a></li>
+					<li><a href="grafikon.html">Grafikon</a></li>
+					<li><a href="slike.html">Slike</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<h1>Grafički prikaz vremenskih podataka</h1>
+
+		<section class="grafikoni">
+			<h2>Pie grafikon – Tipovi vremena</h2>
+			<h3 class="pie-naslov">Učestalost vremena</h3>
+
+			<figure class="pie-chart" aria-label="Tipovi vremena">
+				<span class="slice sunny"></span>
+				<span class="slice rainy"></span>
+				<span class="slice cloudy"></span>
+				<span class="slice snowy"></span>
+			</figure>
+
+			<ul class="pie-legend">
+				<li class="sunny" data-info="40%">Sunny</li>
+				<li class="rainy" data-info="30%">Rainy</li>
+				<li class="cloudy" data-info="25%">Cloudy</li>
+				<li class="snowy" data-info="5%">Snowy</li>
+			</ul>
+
+			<h2>Stupčasti grafikon – Prosječne temperature</h2>
+			<table class="bar-chart">
+				<caption>
+					Temperature po godišnjim dobima
+				</caption>
+				<thead>
+					<tr>
+						<th>Sezona</th>
+						<th>Temp (°C)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Spring</th>
+						<td style="--value: 25"><span>25°C</span></td>
+					</tr>
+					<tr>
+						<th>Summer</th>
+						<td style="--value: 30"><span>30°C</span></td>
+					</tr>
+					<tr>
+						<th>Autumn</th>
+						<td style="--value: 28"><span>28°C</span></td>
+					</tr>
+					<tr>
+						<th>Winter</th>
+						<td style="--value: 10"><span>10°C</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</body>
+</html>

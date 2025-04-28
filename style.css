@@ -1,34 +1,104 @@
 body {
 	font-family: sans-serif;
-	padding: 20px;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
 }
 
-#filters {
-	margin-bottom: 20px;
+header,
+nav,
+footer {
+	padding: 1rem;
 }
 
-label {
-	margin-right: 15px;
+header {
+	background-color: #f0f0f0;
+	text-align: center;
 }
 
+.nav-menu {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	background-color: #333;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-menu li {
+	position: relative;
+}
+
+.nav-menu a {
+	color: white;
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+	background-color: #444;
+	transform: scale(1.05);
+}
+
+.grid-container {
+	display: flex;
+	gap: 2rem;
+	padding: 1rem;
+}
+
+.grid-container section {
+	flex: 3;
+}
+
+.grid-container aside {
+	flex: 1;
+}
+
+/*tablica*/
 table {
-	border-collapse: collapse;
 	width: 100%;
-	margin-top: 20px;
+	border-collapse: collapse;
+	margin-bottom: 1.5rem;
+}
+
+caption {
+	font-weight: bold;
+	padding: 0.5rem;
+	caption-side: top;
 }
 
 th,
 td {
-	border: 1px solid #333;
-	padding: 8px;
-	text-align: left;
+	border: 1px solid #ddd;
+	padding: 0.5rem;
+	text-align: center;
 }
 
 th {
-	background-color: #eee;
+	background-color: #f7f7f7;
 }
 
-/* ikona košarice */
+/*slike*/
+.image-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.5rem;
+}
+
+.image-grid img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+	transform: scale(1.03);
+}
+
+/*košarica*/
 #kosarica-toggle {
 	position: fixed;
 	top: 20px;
@@ -48,7 +118,7 @@ th {
 	margin-left: 4px;
 }
 
-/* dropdown košarice */
+/*košarica - container*/
 #kosarica-container {
 	position: fixed;
 	top: 60px;
@@ -72,4 +142,42 @@ th {
 
 #kosarica button {
 	margin-top: 10px;
+	width: 100%;
+}
+
+/*filteri*/
+#filters {
+	margin: 1rem;
+}
+
+label {
+	margin-right: 15px;
+}
+
+/*footer*/
+footer {
+	text-align: center;
+	background-color: #f0f0f0;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+
+/*responzivnost*/
+@media (max-width: 768px) {
+	.grid-container {
+		flex-direction: column;
+	}
+
+	.nav-menu {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.image-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	aside {
+		order: 2;
+	}
 }

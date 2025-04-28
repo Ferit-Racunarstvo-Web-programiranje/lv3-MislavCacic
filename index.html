@@ -5,14 +5,25 @@
 		<title>Temperature podaci</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
+
 	<body>
-		<!--košarica- ikona -->
+		<header>
+			<h1>Dobrodošli na stranicu s vremenskim podacima</h1>
+		</header>
+
+		<nav aria-label="Glavna navigacija">
+			<ul class="nav-menu">
+				<li><a href="index.html">Početna</a></li>
+				<li><a href="pages/grafikon.html">Grafikon</a></li>
+				<li><a href="pages/slike.html">Slike</a></li>
+			</ul>
+		</nav>
+
+		<!--ikona košarice-->
 		<div id="kosarica-toggle">
 			🛒
 			<span id="kosarica-broj">0</span>
 		</div>
-
-		<h1>Podaci o temperaturama</h1>
 
 		<div id="filters">
 			<label
@@ -54,30 +65,47 @@
 			</label>
 		</div>
 
-		<!-- TABLICA -->
-		<table id="temperatureTable">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Temperatura</th>
-					<th>Sezona</th>
-					<th>Lokacija</th>
-					<th>Vrsta vremena</th>
-					<th>Akcija</th>
-				</tr>
-			</thead>
-			<tbody>
-				<!-- dinamički -->
-			</tbody>
-		</table>
+		<main class="grid-container">
+			<section>
+				<table id="temperatureTable">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Temperatura</th>
+							<th>Sezona</th>
+							<th>Lokacija</th>
+							<th>Vrsta vremena</th>
+							<th>Akcija</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--dinamički-->
+					</tbody>
+				</table>
 
-		<div id="kosarica-container">
-			<aside id="kosarica">
-				<h2>Moja košarica</h2>
-				<ul id="lista-kosarice"></ul>
-				<button id="potvrdi-kosaricu">Potvrdi posudbu</button>
+				<div id="kosarica-container">
+					<aside id="kosarica">
+						<h2>Moja košarica</h2>
+						<ul id="lista-kosarice"></ul>
+						<button id="potvrdi-kosaricu">Potvrdi posudbu</button>
+					</aside>
+				</div>
+			</section>
+
+			<aside>
+				<h2>Vremenske slike</h2>
+				<div class="image-grid">
+					<img src="images/picture1.jpg" alt="Sunčano vrijeme" />
+					<img src="images/picture2.jpg" alt="Oblačno vrijeme" />
+					<img src="images/picture3.jpg" alt="Kišno vrijeme" />
+					<img src="images/picture4.jpg" alt="Snježno vrijeme" />
+				</div>
 			</aside>
-		</div>
+		</main>
+
+		<footer>
+			<p>&copy; 2025 Mislav Čačić</p>
+		</footer>
 
 		<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 		<script src="app.js"></script>
